@@ -127,7 +127,7 @@ auto-tester-test: $(GENERATED)/build
 	$(RUN_BUILD) unittest $(HEADER_TEST)
 
 unittest: $G/dmd-unittest
-	$<
+	gdb -batch $< -ex "run" -ex "bt" -ex "info args" -ex "info locals"
 
 ######## Manual cleanup
 
